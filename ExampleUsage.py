@@ -11,7 +11,7 @@ tch.statistics(df_pred,"stats")
 clf,ac,std = st.create_grades_tree('ExampleStudentData/Learning.xml')
 st.predict(clf,'ExampleStudentData/Predicting.xml',"predicted")
 clf2,ac,std = st.create_fail_tree('ExampleStudentData/Learning.xml')
-st.visualize_fail_trees(clf2,'ExampleStudentData/Predicting.xml','/Users/natalia/Desktop/StudentsFail')
-st.visualize_grades_trees(clf,'ExampleStudentData/Predicting.xml','/Users/natalia/Desktop/StudentsGrades')
+st.visualize_fail_trees(clf2,'ExampleStudentData/Predicting.xml','StudentsFail')
+st.visualize_grades_trees(clf,'ExampleStudentData/Predicting.xml','StudentsGrades')
 
 
