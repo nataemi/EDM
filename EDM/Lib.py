@@ -16,7 +16,6 @@ def get_best_tree_depth(x,y):
 
     for i in range(1, 17):
         clf = tree.DecisionTreeClassifier(max_depth=i,class_weight='balanced')
-        # 7-fold cross validation
         scores = cross_val_score(estimator=clf, X=x, y=y, cv=7, n_jobs=4)
         depth_score.append(scores.mean())
 
@@ -84,7 +83,7 @@ def to_xml(df, filename=None, mode='w'):
         xml.append('</student>')
         return '\n'.join(xml)
 
-    res = '\n'.join(df.apply(row_to_xml, axis=1))
+    '\n'.join(df.apply(row_to_xml, axis=1))
 
     xml.insert(0,'<data>')
     xml.append('</data>')

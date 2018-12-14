@@ -1,12 +1,12 @@
 from EDM.Lib import *
 
-def create_grades_tree(xml_file_with_train_data):  # dodaj tu opcjonalne ustawienia dla drzewa decyzyjnego
+def create_grades_tree(xml_file_with_train_data):
     print("Creating decision tree...")
 
     data = xml_to_pd(xml_file_with_train_data,False)
 
     data = data.drop(['index'], axis=1)
-    Y = data['finalGrade'].values  # zmien ta nazwe na final_grade
+    Y = data['finalGrade'].values
     df1 = data.drop(['finalGrade'], axis=1)
 
     x = df1.values
@@ -33,7 +33,7 @@ def predict(clf, xml_file_with_predict_data,filename=None):
     return df_with_predicted
 
 
-def create_fail_tree(xml_file_with_train_data):  # dodaj tu opcjonalne ustawienia dla drzewa decyzyjnego
+def create_fail_tree(xml_file_with_train_data):
     print("Creating decision tree...")
 
     data = xml_to_pd(xml_file_with_train_data,False)
